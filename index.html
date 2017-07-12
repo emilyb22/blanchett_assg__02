@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firebase</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+
+</head>
+<body ng-app="contactsApp">
+    <main>
+        <h1> Contacts App</h1>
+        <div ng-controller="toDoCtrl" >
+       
+        <section>
+            <h2>Add new contact</h2>
+            <form ng-submit="addTodo()">
+                <input class="input" type="text" ng-model="newTodo.title" placeholder="Title">
+                <input class="input" type="text" ng-model="newTodo.dueDate" placeholder="Date">
+                <input type="submit" value="Add" class="button is-primary">
+            </form>
+        </section>
+        <section>
+            <h2>Contacts</h2>
+            <ul>
+                <li ng-repeat="todo in todoList track by todo.$id"> 
+                   
+                    <input type="text" ng-model="todo.title">
+                    <input type="text" ng-model="todo.dueDate">
+                    <button class="button is-success"
+                            ng-click="saveTodo(todo)"
+                      >
+                       <i class="fa fa-check" aria-hidden="true"></i>
+                   </button>
+                   <button class="button is-danger"
+                            ng-click="removeTodo(todo)"
+                      >
+                       <i class="fa fa-trash-o" aria-hidden="true"></i>
+                   </button>
+                </li>
+            </ul>
+        </section>
+        </div>
+    </main>
+    <!--Load Angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!--Load firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <!--Load Angularfire-->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <!--Load our app-->
+    <script src="app.js"></script>
+</body>
+</html>
