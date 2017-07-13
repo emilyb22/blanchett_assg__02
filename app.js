@@ -19,6 +19,9 @@ angular
     this.getBlankTodo = () => ({
         title:'',
         dueDate: '',
+        phone: '',
+        email: '',
+        birthday: '',
         isCompleted: false
     })
     

@@ -1,9 +1,40 @@
 body{
-        background-color: whitesmoke;
         font-size: 16px;
         line-height: 1.618em;
-        color: rgba(0,0,0,0.87);
         padding: 2rem;
         font-weight: 400;
         
     }
+/*.contact{
+    border: solid 1px grey;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}*/
+
+.contact_input_header {
+    display: block;
+    border: none;
+    width: 40%;
+    padding-left:40px;
+    font-size: 1rem;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.contact_input_body {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid transparent;
+    width: 100%;
+    padding-left:40px;
+    font-size: 1rem;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #363636;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+

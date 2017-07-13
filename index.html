@@ -11,39 +11,80 @@
 </head>
 <body ng-app="contactsApp">
     <main>
+        
+        <div ng-controller="toDoCtrl" class="container">
         <h1> Contacts App</h1>
-        <div ng-controller="toDoCtrl" >
        
         <section>
             <h2>Add new contact</h2>
             <form ng-submit="addTodo()">
-                <input class="input" type="text" ng-model="newTodo.title" placeholder="Title">
-                <input class="input" type="text" ng-model="newTodo.dueDate" placeholder="Date">
-                <input type="submit" value="Add" class="button is-primary">
+                <input class="input is-info" type="text" ng-model="newTodo.title" placeholder="First Name" style="margin-bottom:10px;">
+                <input class="input is-info" type="text" ng-model="newTodo.dueDate" placeholder="Last Name" style="margin-bottom:10px;">
+                <input class="input is-info" type="text" ng-model="newTodo.phone" placeholder="Phone #" style="margin-bottom:10px;">
+                <input class="input is-info" type="text" ng-model="newTodo.email" placeholder="E-mail" style="margin-bottom:10px;">
+                <input class="input is-info" type="text" ng-model="newTodo.birthday" placeholder="Birthday" style="margin-bottom:10px;">
+
+
+                <input type="submit" value="Add" class="button is-info">
             </form>
         </section>
         <section>
-            <h2>Contacts</h2>
-            <ul>
-                <li ng-repeat="todo in todoList track by todo.$id"> 
-                   
-                    <input type="text" ng-model="todo.title">
-                    <input type="text" ng-model="todo.dueDate">
-                    <button class="button is-success"
-                            ng-click="saveTodo(todo)"
-                      >
-                       <i class="fa fa-check" aria-hidden="true"></i>
-                   </button>
-                   <button class="button is-danger"
-                            ng-click="removeTodo(todo)"
-                      >
-                       <i class="fa fa-trash-o" aria-hidden="true"></i>
-                   </button>
+            <h2 style="margin-bottom:20px;margin-top:20px;">Contacts</h2>
+            <ul class="columns is-multiline is-desktop is-tablet" >
+               
+                <li ng-repeat="todo in todoList track by todo.$id" class="contact column is-one-third"> 
+                 
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                             <span class="icon is-medium is-left">
+                                <i class="fa fa-user" style="color:#3273dc;"></i>
+                                </span>
+                              <input class="contact_input_header" type="text" ng-model="todo.title">
+                              <input class="contact_input_header" type="text" ng-model="todo.dueDate">
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="field">
+                                <p class="control has-icons-left">
+                                <input class="contact_input_body" ng-model="todo.phone">
+                                <span class="icon is-small is-left">
+                                <i class="fa fa-phone"></i>
+                                </span>
+                                </p>
+                                </div>
+                                
+                                <div class="field">
+                                <p class="control has-icons-left">
+                                <input class="contact_input_body" ng-model="todo.email">
+                                <span class="icon is-small is-left">
+                                <i class="fa fa-envelope"></i>
+                                </span>
+                                </p>
+                                </div>
+                                
+                                <div class="field">
+                                <p class="control has-icons-left">
+                                <input class="contact_input_body" ng-model="todo.birthday">
+                                <span class="icon is-small is-left">
+                                <i class="fa fa-envelope"></i>
+                                </span>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a class="card-footer-item" ng-click="saveTodo(todo)" style="color:#3273dc;">Save</a>
+                            <a class="card-footer-item" ng-click="removeTodo(todo)" style="color:#3273dc;">Delete</a>
+                        </footer>
+                
+                    </div>
                 </li>
             </ul>
         </section>
-        </div>
-    </main>
+    </div>
+</main>
     <!--Load Angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <!--Load firebase-->
