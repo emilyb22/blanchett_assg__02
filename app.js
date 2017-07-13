@@ -34,7 +34,11 @@ angular
     
     $scope.saveTodo = todo => $scope.todoList.$save(todo)
     
-    $scope.removeTodo = todo => $scope.todoList.$remove(todo)
-    
-    //$scope.todoList.$add($scope.todo)
+    $scope.removeTodo = todo => {
+        if(confirm("Are you sure you want to delete this contact?")){
+    $scope.todoList.$remove(todo)
+        }
+    }
 })
+
+
