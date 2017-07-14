@@ -39,6 +39,8 @@ angular
     $scope.todoList.$remove(todo)
         }
     }
+    
+    
 })
 
 

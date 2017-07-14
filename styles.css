@@ -1,3 +1,32 @@
+/****************************************
+        Utils 
+****************************************/
+.width-50{
+    width:50%;
+}
+.width-30{
+    width:30%;
+}
+.width-10{
+    width:10%;
+}
+.mrg-tb-10{
+    margin: 10px 0;
+}
+.mrg-tb-5{
+    margin: 5px 0;
+}
+.pddng-5{
+    padding:5px;
+} 
+.pddng-10{
+    padding:10px;
+}
+ 
+/***************************************
+        Template
+***************************************/
+
 body{
         font-size: 16px;
         line-height: 1.618em;
@@ -5,12 +34,14 @@ body{
         font-weight: 400;
         
     }
-/*.contact{
-    border: solid 1px grey;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}*/
+
+footer{
+    margin-top: 60px;
+}
+
+/**************************************
+        Individual Styles
+***************************************/
 
 .contact_input_header {
     display: block;
@@ -37,4 +68,36 @@ body{
     color: #363636;
     font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+#save_button:disabled{
+   color: #3273dc;
+    background-color: white;
+}
+
+#save_button{
+    background-color: #3273dc;
+    color: white;
+    border: none;
+        cursor: pointer;
+    font-size: 16px;
+        border-right: solid 2px rgba(10,10,10,.1);
+    
+
+}
+
+/**************************************
+            Media Queries
+***************************************/
+
+
+
+
+
+
+
+
+
+
+
+
 
