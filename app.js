@@ -9,34 +9,34 @@ angular
     messagingSenderId: "209743316027"  
 })
 .run(firebaseConfig => firebase.initializeApp(firebaseConfig))
-.controller('toDoCtrl', function($scope, $firebaseObject, $firebaseArray){
-	const dbRef = firebase.database().ref().child('todos')
+.controller('contactsCtrl', function($scope, $firebaseObject, $firebaseArray){
+	const dbRef = firebase.database().ref().child('contacts')
     
-    $scope.todoList = $firebaseArray(dbRef)
+    $scope.contactList = $firebaseArray(dbRef)
     
-    $scope.todo = $firebaseObject(dbRef.child('-KoO9a3E2avl-qdnxNU7'))
+    $scope.contact = $firebaseObject(dbRef.child('-KoO9a3E2avl-qdnxNU7'))
     
-    this.getBlankTodo = () => ({
-        title:'',
-        dueDate: '',
+    this.getBlankContact = () => ({
+        fname:'',
+        lname: '',
         phone: '',
         email: '',
         birthday: '',
         isCompleted: false
     })
     
-    $scope.newTodo = this.getBlankTodo()
+    $scope.newContact = this.getBlankContact()
     
-    $scope.addTodo = () => {
-        $scope.todoList.$add($scope.newTodo)
-        $scope.newTodo = this.getBlankTodo()
+    $scope.addContact = () => {
+        $scope.contactList.$add($scope.newContact)
+        $scope.newContact = this.getBlankContact()
     }
     
-    $scope.saveTodo = todo => $scope.todoList.$save(todo)
+    $scope.saveContact = contact => $scope.contactList.$save(contact)
     
-    $scope.removeTodo = todo => {
+    $scope.removeContact = contact => {
         if(confirm("Are you sure you want to delete this contact?")){
-    $scope.todoList.$remove(todo)
+    $scope.contactList.$remove(contact)
         }
     }
     
