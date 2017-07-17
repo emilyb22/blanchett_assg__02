@@ -85,11 +85,27 @@ footer{
 
 }
 
+#new_contact{
+    width:50%; margin: auto;
+}
+
 /**************************************
             Media Queries
 ***************************************/
 
 
+@media only screen and (max-width: 800px) {
+    #new_contact{
+    width:75%; 
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+    #new_contact{
+    width:100%; 
+}
+}
 
 
 
